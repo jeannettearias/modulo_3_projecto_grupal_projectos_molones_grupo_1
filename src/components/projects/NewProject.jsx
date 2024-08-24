@@ -1,5 +1,6 @@
-import { Form } from "react-router-dom";
+import Form from "../form/Form";
 import Preview from "../preview/Preview";
+
 
 function NewProject() {
   return (
@@ -14,13 +15,9 @@ function NewProject() {
         </a>
       </section>
 
-      <section className="preview">
-        <Preview />
-      </section>
-
-      <form className="addForm">
-        <Form />
-      </form>
+      <Preview />
+      <Form />
+      
     </>
   );
 }

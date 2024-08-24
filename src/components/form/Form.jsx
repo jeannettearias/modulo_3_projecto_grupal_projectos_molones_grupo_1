@@ -5,6 +5,7 @@ import ButtonSaveProject from "./ButtonSaveProject";
 function Form() {
   return (
     <>
+    <form className="addForm">
       <h2 className="title">Información</h2>
       <fieldset className="addForm__group">
         <legend className="addForm__title">Cuéntanos sobre el proyecto</legend>
@@ -78,6 +79,7 @@ function Form() {
         <ButtonAuthorPicture />
         <ButtonSaveProject />
       </fieldset>
+    </form>
     </>
   );
 }
