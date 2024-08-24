@@ -8,11 +8,9 @@ function App() {
     <div className="container">
 
         <Header />
-
         <main className="main">
           <NewProject />
         </main>
-
         <Footer />
 
     </div>
