@@ -1,11 +1,32 @@
+import { useState } from "react";
 import ButtonAuthorPicture from "./ButtonAuthorPicture";
 import ButtonProjectPicture from "./ButtonProjectPicture";
 import ButtonSaveProject from "./ButtonSaveProject";
 
 function Form() {
+
+  const [allValues, setAllValues] = useState({
+    name: '',
+    slogan: '',
+    repo: '',
+    demo: '',
+    technologies: '',
+    desc: '',
+    autor: '',
+    job: ''
+  });
+
+
+  const getInputValue = (ev) => {
+    const newValues = {...allValues, [ev.currentTarget.id]: ev.target.value};
+    setAllValues(newValues);
+
+    console.log(newValues);
+  }  
+
   return (
     <>
-    <form className="addForm">
+    <form className="addForm" onSubmit={ev => {ev.preventDefault();}}>
       <h2 className="title">Información</h2>
       <fieldset className="addForm__group">
         <legend className="addForm__title">Cuéntanos sobre el proyecto</legend>
@@ -15,6 +36,7 @@ function Form() {
           name="name"
           id="name"
           placeholder="Nombre del proyecto"
+          onChange={getInputValue}
         />
         <input
           className="addForm__input"
@@ -22,6 +44,7 @@ function Form() {
           name="slogan"
           id="slogan"
           placeholder="Slogan"
+          onChange={getInputValue}
         />
         <div className="addForm__2col">
           <input
@@ -30,6 +53,7 @@ function Form() {
             name="repo"
             id="repo"
             placeholder="Repositorio"
+            onChange={getInputValue}
           />
           <input
             className="addForm__input"
@@ -37,6 +61,7 @@ function Form() {
             name="demo"
             id="demo"
             placeholder="Demo"
+            onChange={getInputValue}
           />
         </div>
         <input
@@ -45,6 +70,7 @@ function Form() {
           name="technologies"
           id="technologies"
           placeholder="Tecnologías"
+          onChange={getInputValue}
         />
         <textarea
           className="addForm__input"
@@ -53,6 +79,7 @@ function Form() {
           id="desc"
           placeholder="Descripción"
           rows="5"
+          onChange={getInputValue}
         ></textarea>
       </fieldset>
 
@@ -64,6 +91,7 @@ function Form() {
           name="autor"
           id="autor"
           placeholder="Nombre"
+          onChange={getInputValue}
         />
         <input
           className="addForm__input"
@@ -71,6 +99,7 @@ function Form() {
           name="job"
           id="job"
           placeholder="Trabajo"
+          onChange={getInputValue}
         />
       </fieldset>
 
