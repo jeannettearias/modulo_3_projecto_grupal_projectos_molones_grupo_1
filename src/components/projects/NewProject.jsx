@@ -4,7 +4,7 @@ import Preview from "../preview/Preview";
 
 function NewProject() {
   return (
-    <>
+    <main className="main">
       <section className="hero">
         <h2 className="title">Proyectos molones</h2>
         <p className="hero__text">
@@ -18,7 +18,7 @@ function NewProject() {
       <Preview />
       <Form />
       
-    </>
+    </main>
   );
 }
 
