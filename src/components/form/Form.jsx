@@ -2,10 +2,9 @@ import { useState } from "react";
 import ButtonAuthorPicture from "./ButtonAuthorPicture";
 import ButtonProjectPicture from "./ButtonProjectPicture";
 import ButtonSaveProject from "./ButtonSaveProject";
+import PropTypes from "prop-types";
 
-import PropTypes from 'prop-types';
-
-function Form({ uploadProjectPicture, handleUploadPicture }) {
+function Form({uploadProjectPicture, handleUploadPicture}) {
 
   const [allValues, setAllValues] = useState({
     name: '',
