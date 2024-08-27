@@ -23,7 +23,7 @@ function ButtonProjectPicture({ uploadProjectPicture, handleUploadPicture }) {
     </>
   );
 }
-ButtonProjectPicture.protoType = {
+ButtonProjectPicture.propTypes = {
   uploadProjectPicture: PropTypes.func.isRequired,
   handleUploadPicture: PropTypes.func.isRequired
 
