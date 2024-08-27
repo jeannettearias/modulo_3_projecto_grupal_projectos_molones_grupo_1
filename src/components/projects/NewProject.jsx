@@ -1,8 +1,9 @@
 import Form from "../form/Form";
 import Preview from "../preview/Preview";
+import PropTypes from 'prop-types';
 
 
-function NewProject() {
+function NewProject({uploadProjectPicture, handleUploadPicture}) {
   return (
     <main className="main">
       <section className="hero">
@@ -16,10 +17,15 @@ function NewProject() {
       </section>
 
       <Preview />
-      <Form />
+      <Form uploadProjectPicture={uploadProjectPicture} handleUploadPicture={handleUploadPicture}/>
       
     </main>
   );
 }
+
+Form.propTypes = {
+  uploadProjectPicture: PropTypes.func.isRequired,
+  handleUploadPicture: PropTypes.func.isRequired
+};
 
 export default NewProject;
