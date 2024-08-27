@@ -13,6 +13,17 @@ function App() {
   //Global variables
   const [uploadProjectPicture, setUploadProjectPicture] = useState('');
 
+  const [allValues, setAllValues] = useState({
+    name: '',
+    slogan: '',
+    repo: '',
+    demo: '',
+    technologies: '',
+    desc: '',
+    autor: '',
+    job: ''
+  });
+
 
   //Upload pictures 
   const handleUploadPicture = (uploadProjectPicture) => {
@@ -20,18 +31,24 @@ function App() {
     console.log(uploadProjectPicture);
   }
 
+  //Get input values
+  const handleInputValue = (nameProperty, valueProperty) => {
+    const newValues = {...allValues, [nameProperty]: valueProperty};
+    setAllValues(newValues);
+
+    console.log(newValues);
+  }
+
 
   return (
     <div className="container">
 
       <Header />
-
-      <main className="main">
-        <Routes>
+      <Routes>
           <Route path="/landing" element={<Landing />} />
-          <Route path="/"  element={<NewProject uploadProjectPicture={uploadProjectPicture} handleUploadPicture={handleUploadPicture} />} />
-        </Routes>
-      </main>
+          <Route path="/"  element={<NewProject uploadProjectPicture={uploadProjectPicture} handleUploadPicture={handleUploadPicture} handleInputValue = {handleInputValue} allValues={allValues}/>} />
+      </Routes>
+
 
       <Footer />
       

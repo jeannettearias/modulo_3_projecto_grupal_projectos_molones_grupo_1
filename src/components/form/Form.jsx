@@ -1,28 +1,12 @@
-import { useState } from "react";
 import ButtonAuthorPicture from "./ButtonAuthorPicture";
 import ButtonProjectPicture from "./ButtonProjectPicture";
 import ButtonSaveProject from "./ButtonSaveProject";
 import PropTypes from "prop-types";
 
-function Form({uploadProjectPicture, handleUploadPicture}) {
+function Form({uploadProjectPicture, handleUploadPicture, allValues, handleInputValue}) {
 
-  const [allValues, setAllValues] = useState({
-    name: '',
-    slogan: '',
-    repo: '',
-    demo: '',
-    technologies: '',
-    desc: '',
-    autor: '',
-    job: ''
-  });
-
-
-  const getInputValue = (ev) => {
-    const newValues = {...allValues, [ev.currentTarget.id]: ev.target.value};
-    setAllValues(newValues);
-
-    console.log(newValues);
+  const handleInput = (ev) => {
+    handleInputValue(ev.currentTarget.id, ev.currentTarget.value); 
   }  
 
   return (
@@ -36,16 +20,18 @@ function Form({uploadProjectPicture, handleUploadPicture}) {
           type="text"
           name="name"
           id="name"
+          value = {allValues.name}
           placeholder="Nombre del proyecto"
-          onChange={getInputValue}
+          onChange={handleInput}
         />
         <input
           className="addForm__input"
           type="text"
           name="slogan"
           id="slogan"
+          value = {allValues.slogan}
           placeholder="Slogan"
-          onChange={getInputValue}
+          onChange={handleInput}
         />
         <div className="addForm__2col">
           <input
@@ -53,16 +39,18 @@ function Form({uploadProjectPicture, handleUploadPicture}) {
             type="url"
             name="repo"
             id="repo"
+            value = {allValues.repo}
             placeholder="Repositorio"
-            onChange={getInputValue}
+            onChange={handleInput}
           />
           <input
             className="addForm__input"
             type="url"
             name="demo"
             id="demo"
+            value = {allValues.demo}
             placeholder="Demo"
-            onChange={getInputValue}
+            onChange={handleInput}
           />
         </div>
         <input
@@ -70,17 +58,19 @@ function Form({uploadProjectPicture, handleUploadPicture}) {
           type="text"
           name="technologies"
           id="technologies"
+          value = {allValues.technologies}
           placeholder="Tecnologías"
-          onChange={getInputValue}
+          onChange={handleInput}
         />
         <textarea
           className="addForm__input"
           type="text"
           name="desc"
           id="desc"
+          value = {allValues.desc}
           placeholder="Descripción"
           rows="5"
-          onChange={getInputValue}
+          onChange={handleInput}
         ></textarea>
       </fieldset>
 
@@ -91,16 +81,18 @@ function Form({uploadProjectPicture, handleUploadPicture}) {
           type="text"
           name="autor"
           id="autor"
+          value = {allValues.autor}
           placeholder="Nombre"
-          onChange={getInputValue}
+          onChange={handleInput}
         />
         <input
           className="addForm__input"
           type="text"
           name="job"
           id="job"
+          value = {allValues.job}
           placeholder="Trabajo"
-          onChange={getInputValue}
+          onChange={handleInput}
         />
       </fieldset>
 
@@ -119,7 +111,9 @@ function Form({uploadProjectPicture, handleUploadPicture}) {
 
 Form.propTypes = {
   uploadProjectPicture: PropTypes.string.isRequired,
-  handleUploadPicture: PropTypes.func.isRequired
+  handleUploadPicture: PropTypes.func.isRequired,
+  handleInputValue: PropTypes.func.isRequired,
+  allValues: PropTypes.object.isRequired
 };
 
 export default Form;
