@@ -24,7 +24,7 @@ function NewProject({uploadProjectPicture, handleUploadPicture}) {
 }
 
 NewProject.propTypes = {
-  uploadProjectPicture: PropTypes.func.isRequired,
+  uploadProjectPicture: PropTypes.string.isRequired,
   handleUploadPicture: PropTypes.func.isRequired
 };
 

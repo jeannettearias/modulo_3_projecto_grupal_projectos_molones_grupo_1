@@ -119,9 +119,8 @@ function Form({ uploadProjectPicture, handleUploadPicture }) {
 }
 
 Form.propTypes = {
-  uploadProjectPicture: PropTypes.func.isRequired,
+  uploadProjectPicture: PropTypes.string.isRequired,
   handleUploadPicture: PropTypes.func.isRequired
-
 };
 
 export default Form;

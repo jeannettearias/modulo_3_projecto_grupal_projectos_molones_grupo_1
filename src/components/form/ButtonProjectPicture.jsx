@@ -24,7 +24,7 @@ function ButtonProjectPicture({ uploadProjectPicture, handleUploadPicture }) {
   );
 }
 ButtonProjectPicture.propTypes = {
-  uploadProjectPicture: PropTypes.func.isRequired,
+  uploadProjectPicture: PropTypes.string.isRequired,
   handleUploadPicture: PropTypes.func.isRequired
 
 };
