@@ -28,8 +28,8 @@ function App() {
 
       <main className="main">
         <Routes>
-          <Route path="" element={<Landing />} />
-          <Route path="/newproject"  element={<NewProject uploadProjectPicture={uploadProjectPicture} handleUploadPicture={handleUploadPicture} />} />
+          <Route path="/landing" element={<Landing />} />
+          <Route path="/"  element={<NewProject uploadProjectPicture={uploadProjectPicture} handleUploadPicture={handleUploadPicture} />} />
         </Routes>
       </main>
 
