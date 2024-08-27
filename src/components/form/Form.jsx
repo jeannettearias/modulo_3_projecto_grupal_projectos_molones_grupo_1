@@ -3,6 +3,7 @@ import ButtonAuthorPicture from "./ButtonAuthorPicture";
 import ButtonProjectPicture from "./ButtonProjectPicture";
 import ButtonSaveProject from "./ButtonSaveProject";
 
+<<<<<<< HEAD
 function Form() {
 
   const [allValues, setAllValues] = useState({
@@ -116,9 +117,10 @@ function Form() {
   );
 }
 
-Form.protoType = {
+Form.propTypes = {
   uploadProjectPicture: PropTypes.func.isRequired,
   handleUploadPicture: PropTypes.func.isRequired
 
 };
+
 export default Form;
