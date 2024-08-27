@@ -23,7 +23,7 @@ function NewProject({uploadProjectPicture, handleUploadPicture}) {
   );
 }
 
-Form.propTypes = {
+NewProject.propTypes = {
   uploadProjectPicture: PropTypes.func.isRequired,
   handleUploadPicture: PropTypes.func.isRequired
 };
