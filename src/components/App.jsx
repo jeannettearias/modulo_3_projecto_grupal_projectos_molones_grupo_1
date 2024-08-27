@@ -21,32 +21,19 @@ function App() {
   }
 
 
-
-
-
   return (
     <div className="container">
-      <header>
-        <Header />
-      </header>
+
+      <Header />
 
       <main className="main">
-
         <Landing />
         <NewProject />
-
-        <Form
-
-          uploadProjectPicture={uploadProjectPicture}
-          handleUploadPicture={handleUploadPicture}
-        />
-
+        <Form uploadProjectPicture={uploadProjectPicture} handleUploadPicture={handleUploadPicture} />
       </main>
 
-      <footer>
-        <Footer />
-      </footer>
-
+      <Footer />
+      
     </div>
   )
 }

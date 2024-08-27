@@ -123,4 +123,5 @@ Form.propTypes = {
   handleUploadPicture: PropTypes.func.isRequired
 
 };
+
 export default Form;
