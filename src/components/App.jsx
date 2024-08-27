@@ -3,8 +3,8 @@ import Footer from './pages/Footer';
 import Header from './pages/Header';
 import NewProject from './projects/NewProject';
 import Landing from './Landing';
-import Form from './form/Form';
 import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 
 
@@ -27,9 +27,10 @@ function App() {
       <Header />
 
       <main className="main">
-        <Landing />
-        <NewProject />
-        <Form uploadProjectPicture={uploadProjectPicture} handleUploadPicture={handleUploadPicture} />
+        <Routes>
+          <Route path="" element={<Landing />} />
+          <Route path="/newproject"  element={<NewProject uploadProjectPicture={uploadProjectPicture} handleUploadPicture={handleUploadPicture} />} />
+        </Routes>
       </main>
 
       <Footer />
