@@ -3,7 +3,7 @@ import Preview from "../preview/Preview";
 import PropTypes from 'prop-types';
 
 
-function NewProject({uploadProjectPicture, handleUploadPicture, allValues, handleInputValue}) {
+function NewProject({ allValues, handleInputValue }) {
   return (
     <main className="main">
       <section className="hero">
@@ -16,16 +16,20 @@ function NewProject({uploadProjectPicture, handleUploadPicture, allValues, handl
         </a>
       </section>
 
-      <Preview />
-      <Form uploadProjectPicture={uploadProjectPicture} handleUploadPicture={handleUploadPicture} allValues = {allValues} handleInputValue = {handleInputValue}/>
-      
+      <Preview
+        allValues={allValues}
+
+      />
+      <Form
+
+        allValues={allValues}
+        handleInputValue={handleInputValue} />
+
     </main>
   );
 }
 
 NewProject.propTypes = {
-  uploadProjectPicture: PropTypes.string.isRequired,
-  handleUploadPicture: PropTypes.func.isRequired,
   allValues: PropTypes.object.isRequired,
   handleInputValue: PropTypes.func.isRequired
 };

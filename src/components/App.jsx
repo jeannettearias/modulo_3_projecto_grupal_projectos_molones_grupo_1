@@ -11,7 +11,6 @@ import { Routes, Route } from 'react-router-dom';
 function App() {
 
   //Global variables
-  const [uploadProjectPicture, setUploadProjectPicture] = useState('');
 
   const [allValues, setAllValues] = useState({
     name: '',
@@ -21,19 +20,14 @@ function App() {
     technologies: '',
     desc: '',
     autor: '',
-    job: ''
+    job: '',
+    photo: '',
+    image: '',
   });
-
-
-  //Upload pictures 
-  const handleUploadPicture = (uploadProjectPicture) => {
-    setUploadProjectPicture(uploadProjectPicture);
-    console.log(uploadProjectPicture);
-  }
 
   //Get input values
   const handleInputValue = (nameProperty, valueProperty) => {
-    const newValues = {...allValues, [nameProperty]: valueProperty};
+    const newValues = { ...allValues, [nameProperty]: valueProperty };
     setAllValues(newValues);
 
     console.log(newValues);
@@ -45,13 +39,17 @@ function App() {
 
       <Header />
       <Routes>
-          <Route path="/landing" element={<Landing />} />
-          <Route path="/"  element={<NewProject uploadProjectPicture={uploadProjectPicture} handleUploadPicture={handleUploadPicture} handleInputValue = {handleInputValue} allValues={allValues}/>} />
+        <Route path="/landing" element={<Landing />} />
+
+        <Route path="/" element={<NewProject
+
+          handleInputValue={handleInputValue}
+          allValues={allValues} />} />
       </Routes>
 
 
       <Footer />
-      
+
     </div>
   )
 }
