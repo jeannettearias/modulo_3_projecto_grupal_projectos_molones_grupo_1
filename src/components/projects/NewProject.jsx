@@ -16,7 +16,7 @@ function NewProject({uploadProjectPicture, handleUploadPicture, allValues, handl
         </a>
       </section>
 
-      <Preview />
+      <Preview data={allValues}/>
       <Form uploadProjectPicture={uploadProjectPicture} handleUploadPicture={handleUploadPicture} allValues = {allValues} handleInputValue = {handleInputValue}/>
       
     </main>
