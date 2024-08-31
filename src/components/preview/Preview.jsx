@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-
 import ProjectCard from "../card/ProjectCard";
+
 
 function Preview({ allValues }) {
   return (
@@ -14,7 +14,7 @@ function Preview({ allValues }) {
 }
 
 Preview.propTypes = {
-  allValues: PropTypes.object.isRequired,
-}
+  allValues: PropTypes.object.isRequired
+};
 
 export default Preview;

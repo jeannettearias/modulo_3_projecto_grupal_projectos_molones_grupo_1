@@ -24,7 +24,7 @@ function NewProject({ allValues, handleInputValue }) {
 
         allValues={allValues}
         handleInputValue={handleInputValue} />
-
+      
     </main>
   );
 }
