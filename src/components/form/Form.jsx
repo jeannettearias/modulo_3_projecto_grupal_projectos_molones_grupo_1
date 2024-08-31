@@ -9,12 +9,12 @@ function Form({ allValues, handleInputValue }) {
     handleInputValue(ev.currentTarget.id, ev.currentTarget.value);
   }
 
-  const updateProjectPhoto = (img) => {
-    handleInputValue('photo', img);
+  const updateProjectImage = (img) => {
+    handleInputValue('image', img);
 
   }
-  const updateAuthorImage = (img) => {
-    handleInputValue('image', img);
+  const updateAuthorPhoto = (img) => {
+    handleInputValue('photo', img);
 
   }
 
@@ -108,12 +108,12 @@ function Form({ allValues, handleInputValue }) {
         <fieldset className="addForm__group--upload">
           <UploadButton
             text='Subir foto de proyecto'
-            updateAvatar={updateProjectPhoto}
+            updateAvatar={updateProjectImage}
           />
 
           <UploadButton
             text='Subir foto de la autora'
-            updateAvatar={updateAuthorImage}
+            updateAvatar={updateAuthorPhoto}
           />
           <ButtonSaveProject />
         </fieldset>

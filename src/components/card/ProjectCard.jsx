@@ -8,7 +8,7 @@ function ProjectCard({ allValues }) {
       </h2>
 
       <div className="card__author">
-        <div className="card__authorPhoto" style={{ backgroundImage: allValues.image ? `url(${allValues.image})` : null }} ></div>
+        <div className="card__authorPhoto" style={{ backgroundImage: allValues.photo ? `url(${allValues.photo})` : null }} ></div>
         <p className="card__job">{allValues.job || "Full stack Developer"}</p>
         <h3 className="card__name">{allValues.autor || "Emmelie Bjôrklund"}</h3>
       </div>

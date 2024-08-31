@@ -6,7 +6,7 @@ function Preview({ allValues }) {
   return (
     <section className="preview">
       <div className="projectImage"
-        style={{ backgroundImage: allValues.photo ? `url(${allValues.photo})` : null }}></div>
+        style={{ backgroundImage: allValues.image ? `url(${allValues.image})` : null }}></div>
       <ProjectCard
         allValues={allValues} />
     </section>
