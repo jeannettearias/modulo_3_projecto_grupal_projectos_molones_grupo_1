@@ -4,7 +4,7 @@ import '../styles/App.scss';
 function Landing() {
     return (
 
-        <main className="main">
+        <main className="main__landing">
             <section className="hero">
                 <h2 className="title">Proyectos molones</h2>
                 <p className="hero__text">
