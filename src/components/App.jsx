@@ -3,7 +3,7 @@ import Footer from './pages/Footer';
 import Header from './pages/Header';
 import NewProject from './projects/NewProject';
 import Landing from './Landing';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 
@@ -29,10 +29,19 @@ function App() {
   const [messageUrl, setMessageUrl] = useState(''); 
   const [messageError, setMessageError] = useState('');
 
+ useEffect(() => {
+  const saveData = localStorage.getItem('formData');
+  if(saveData){
+    setAllValues(JSON.parse(saveData));
+  }
+ },[])
+
   //Get input values
   const handleInputValue = (nameProperty, valueProperty) => {
     const newValues = { ...allValues, [nameProperty]: valueProperty };
     setAllValues(newValues);
+
+    localStorage.setItem('formData', JSON.stringify(newValues));
 
     console.log(newValues);
   }
