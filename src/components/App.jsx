@@ -66,12 +66,15 @@ function App() {
               <a className='link_create_card' href={data.cardURL} target="_blank"> {data.cardURL}</a>
             </div>
           );
+          setMessageError('');
         } else {
           setMessageError (data.error)
         }
-
-
       })
+      .catch(error => {
+        console.error('Error en fetch:', error);
+        setMessageError('Hubo un problema al crear la tarjeta. Inténtalo de nuevo.');
+      });
   };
 
 
