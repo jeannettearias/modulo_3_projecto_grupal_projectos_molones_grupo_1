@@ -71,9 +71,9 @@ function App() {
 
       <Header />
       <Routes>
-        <Route path="/landing" element={<Landing />} />
+        <Route path="/" element={<Landing />} />
 
-        <Route path="/" element={<NewProject
+        <Route path="/newproject" element={<NewProject
 
           handleInputValue={handleInputValue}
           messageError={messageError}

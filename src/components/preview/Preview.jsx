@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-
 import ProjectCard from "../card/ProjectCard";
+
 
 function Preview({ allValues }) {
   return (
     <section className="preview">
       <div className="projectImage"
-        style={{ backgroundImage: allValues.photo ? `url(${allValues.photo})` : null }}></div>
+        style={{ backgroundImage: allValues.image ? `url(${allValues.image})` : null }}></div>
       <ProjectCard
         allValues={allValues} />
     </section>
@@ -14,7 +14,7 @@ function Preview({ allValues }) {
 }
 
 Preview.propTypes = {
-  allValues: PropTypes.object.isRequired,
-}
+  allValues: PropTypes.object.isRequired
+};
 
 export default Preview;

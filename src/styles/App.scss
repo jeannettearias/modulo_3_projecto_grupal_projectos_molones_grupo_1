@@ -4,6 +4,7 @@
 :root {
   font: var(--font-normal); /* font-size: 10px; */
   color: var(--color-white);
+  background-color: var(--color-dark);
 }
 
 @media screen and (min-width: 420px) {
@@ -440,4 +441,29 @@
   text-decoration: none;
   color: white;
   margin-right: 1px;
+}
+.main__landing{
+  height: 100vh;
+}
+
+.button__landing{
+  display: block;
+  width: fit-content;
+
+  margin-inline: auto;
+  margin-block: 8px;
+  padding: 5px 18px;
+  color:black;
+  font: var(--font-button);
+  text-transform: uppercase;
+  text-decoration: none;
+
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-style: solid;
+  border-width: 1px;
+  border-image-source: linear-gradient(to bottom, #2a2a2a 0%, rgba(0, 0, 0, 0));
+  border-image-slice: 1;
+  border-radius: 20px;
+  background-color: white;
 }
