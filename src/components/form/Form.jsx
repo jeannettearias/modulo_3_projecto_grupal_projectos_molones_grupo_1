@@ -3,7 +3,9 @@ import UploadButton from "./UploadButton";
 import ButtonSaveProject from "./ButtonSaveProject";
 import PropTypes from "prop-types";
 
-function Form({ allValues, handleInputValue }) {
+
+function Form({ allValues, handleInputValue, handleClickCreate, messageError, messageUrl }) {
+
 
   const handleInput = (ev) => {
     handleInputValue(ev.currentTarget.id, ev.currentTarget.value);
@@ -18,9 +20,10 @@ function Form({ allValues, handleInputValue }) {
 
   }
 
+
   return (
     <>
-      <form className="addForm" onSubmit={ev => { ev.preventDefault(); }}>
+      <form className="addForm" onSubmit={ev => { ev.preventDefault();}}>
         <h2 className="title">Información</h2>
         <fieldset className="addForm__group">
           <legend className="addForm__title">Cuéntanos sobre el proyecto</legend>
@@ -115,9 +118,16 @@ function Form({ allValues, handleInputValue }) {
             text='Subir foto de la autora'
             updateAvatar={updateAuthorImage}
           />
-          <ButtonSaveProject />
+          <ButtonSaveProject onClick={handleClickCreate} />
         </fieldset>
       </form>
+
+      <div>
+        {messageUrl && <p>{messageUrl}</p>}
+        {messageError && <p>{messageError}</p>}
+      </div>
+
+
     </>
   );
 }
@@ -125,6 +135,10 @@ function Form({ allValues, handleInputValue }) {
 Form.propTypes = {
   handleInputValue: PropTypes.func.isRequired,
   allValues: PropTypes.object.isRequired,
+  handleClickCreate: PropTypes.func.isRequired,
+  messageError: PropTypes.string.isRequired,
+  messageUrl: PropTypes.node.isRequired,
+
 
 };
 

@@ -8,6 +8,7 @@ import { Routes, Route } from 'react-router-dom';
 
 
 
+
 function App() {
 
   //Global variables
@@ -25,6 +26,9 @@ function App() {
     image: '',
   });
 
+  const [messageUrl, setMessageUrl] = useState(''); 
+  const [messageError, setMessageError] = useState('');
+
   //Get input values
   const handleInputValue = (nameProperty, valueProperty) => {
     const newValues = { ...allValues, [nameProperty]: valueProperty };
@@ -32,6 +36,34 @@ function App() {
 
     console.log(newValues);
   }
+  
+  const handleClickCreate = () => {
+
+    fetch('https://dev.adalab.es/api/projectCard', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(allValues)
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('respuesta', data)
+        if (data.success) {
+          console.log('respuesta', data)
+          setMessageUrl(
+            <div> 
+              Tarjeta creada. URL:
+              <a className='link_create_card' href={data.cardURL} target="_blank"> {data.cardURL}</a>
+            </div>
+          );
+        } else {
+          setMessageError (data.error)
+        }
+
+
+      })
+  };
 
 
   return (
@@ -44,14 +76,20 @@ function App() {
         <Route path="/" element={<NewProject
 
           handleInputValue={handleInputValue}
-          allValues={allValues} />} />
-      </Routes>
+          messageError={messageError}
+          messageUrl={messageUrl}
+          handleClickCreate = {handleClickCreate}
+
+          allValues={allValues} 
+          
+          />} />
+      </Routes> 
 
 
       <Footer />
 
     </div>
-  )
+  );
 }
 
 export default App;

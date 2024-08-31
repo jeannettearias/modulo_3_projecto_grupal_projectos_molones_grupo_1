@@ -3,7 +3,7 @@ import Preview from "../preview/Preview";
 import PropTypes from 'prop-types';
 
 
-function NewProject({ allValues, handleInputValue }) {
+function NewProject({ allValues, handleInputValue, handleClickCreate, messageError,messageUrl }) {
   return (
     <main className="main">
       <section className="hero">
@@ -23,7 +23,12 @@ function NewProject({ allValues, handleInputValue }) {
       <Form
 
         allValues={allValues}
-        handleInputValue={handleInputValue} />
+        handleInputValue={handleInputValue}
+        handleClickCreate={handleClickCreate}
+        messageUrl={messageUrl}
+        messageError={messageError}
+         />
+        
 
     </main>
   );
@@ -31,7 +36,11 @@ function NewProject({ allValues, handleInputValue }) {
 
 NewProject.propTypes = {
   allValues: PropTypes.object.isRequired,
-  handleInputValue: PropTypes.func.isRequired
+  handleInputValue: PropTypes.func.isRequired,
+  handleClickCreate: PropTypes.func.isRequired,
+  messageError: PropTypes.string.isRequired,
+  messageUrl: PropTypes.string.isRequired
+
 };
 
 export default NewProject;
