@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import '../styles/App.scss';
 function Landing() {
     return (
@@ -9,9 +10,7 @@ function Landing() {
                 <p className="hero__text">
                     Escaparate en línea para recoger ideas a través de la tecnología
                 </p>
-                <a className="button__landing" href="./">
-                    NUEVO PROYECTO
-                </a>
+                <Link to='/newproject' className='button__landing'>NUEVO PROYECTO</Link>
             </section>
         </main>
 
