@@ -7,13 +7,9 @@ import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 
-
-
-
 function App() {
 
   //Global variables
-
   const [allValues, setAllValues] = useState({
     name: '',
     slogan: '',
@@ -43,10 +39,9 @@ function App() {
     setAllValues(newValues);
 
     localStorage.setItem('formData', JSON.stringify(newValues));
-
-    console.log(newValues);
   }
 
+  //Delete (form, LS, messages)
   const handleClearForm = () => {
     setAllValues ({
     name: '',
@@ -65,6 +60,7 @@ function App() {
     localStorage.removeItem('formData')
   };
   
+  //Create project card
   const handleClickCreate = () => {
 
     fetch('https://dev.adalab.es/api/projectCard', {
@@ -102,21 +98,19 @@ function App() {
 
       <Header />
       <Routes>
+
         <Route path="/" element={<Landing />} />
 
-        <Route path="/newproject" element={<NewProject
-
-          handleInputValue={handleInputValue}
+        <Route path="/newproject" element={
+          <NewProject handleInputValue={handleInputValue}
           handleClickCreate = {handleClickCreate}
           handleClearForm={handleClearForm}
           messageError={messageError}
           messageUrl={messageUrl}
-          allValues={allValues} 
-          
-          />} />
+          allValues={allValues} />} 
+        />
+
       </Routes> 
-
-
       <Footer />
 
     </div>

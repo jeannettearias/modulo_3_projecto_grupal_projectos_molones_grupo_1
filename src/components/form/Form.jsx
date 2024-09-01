@@ -7,25 +7,22 @@ import ClearButton from "./ClearButton";
 
 function Form({ allValues, handleInputValue, handleClickCreate, messageError, messageUrl, handleClearForm }) {
 
-
   const handleInput = (ev) => {
     handleInputValue(ev.currentTarget.id, ev.currentTarget.value);
   }
 
   const updateProjectImage = (img) => {
     handleInputValue('image', img);
-
   }
   const updateAuthorPhoto = (img) => {
     handleInputValue('photo', img);
-
   }
 
-
   return (
-    <>
     <form className="addForm" onSubmit={ev => { ev.preventDefault();}}>
+
         <h2 className="title">Información</h2>
+
         <fieldset className="addForm__group">
           <legend className="addForm__title">Cuéntanos sobre el proyecto</legend>
           <input
@@ -124,11 +121,6 @@ function Form({ allValues, handleInputValue, handleClickCreate, messageError, me
         <ClearButton handleClearForm={handleClearForm}/>
 
       </form>
-
-      
-
-
-    </>
   );
 }
 

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 function ProjectCard({ allValues }) {
   return (
     <article className="card">
+
       <h2 className="card__projectTitle">
         <span className="card__projectTitle--text">Personal project card</span>
       </h2>
@@ -24,6 +25,7 @@ function ProjectCard({ allValues }) {
           <a className="icon icon__github" href={allValues.repo} title="Haz click para ver el código del proyecto">GitHub link</a>
         </div>
       </div>
+      
     </article>
   );
 }

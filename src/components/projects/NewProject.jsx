@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 function NewProject({ allValues, handleInputValue, handleClickCreate, handleClearForm, messageError,messageUrl }) {
   return (
     <main className="main">
+
       <section className="hero">
         <h2 className="title">Proyectos molones</h2>
         <p className="hero__text">
@@ -16,21 +17,16 @@ function NewProject({ allValues, handleInputValue, handleClickCreate, handleClea
         </a>
       </section>
 
-      <Preview
-        allValues={allValues}
-
-      />
+      <Preview allValues={allValues}/>
       <Form
-
         allValues={allValues}
         handleInputValue={handleInputValue}
         handleClickCreate={handleClickCreate}
         messageUrl={messageUrl}
         messageError={messageError}
         handleClearForm={handleClearForm}
-         />
-        
-
+      />
+      
     </main>
   );
 }

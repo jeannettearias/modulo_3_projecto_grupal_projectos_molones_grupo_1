@@ -58,9 +58,7 @@ function UploadButton({ text, updateAvatar }) {
 
 
   return (
-    <>
-      <label className="button">
-        {text}
+      <label className="button">{text}
         <input className="addForm__hidden"
           type="file"
           ref={myFileField}
@@ -68,7 +66,6 @@ function UploadButton({ text, updateAvatar }) {
           onChange={uploadImage}
         />
       </label>
-    </>
   );
 }
 UploadButton.propTypes = {
