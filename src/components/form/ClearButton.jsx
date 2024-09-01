@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function ClearButton ({handleClearForm}) {
    return (
-    <button type="button" onClick={handleClearForm} className="button"> 
+    <button type="button" onClick={handleClearForm} className="button--reset"> 
     Borrar todo
 
     </button>

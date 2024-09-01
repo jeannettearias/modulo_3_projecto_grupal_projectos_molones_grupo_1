@@ -276,7 +276,6 @@
 
 .addForm .addForm__group {
   margin-bottom: 25px;
-  margin-right: 15px;
 }
 
 .addForm .addForm__input {
@@ -304,7 +303,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 25px;
+
 }
 
 .addForm .addForm__hidden {
@@ -379,7 +378,7 @@
   text-transform: none;
   text-decoration: none;
   text-align: center;
-
+  
   border-radius: 40px;
   background-image: linear-gradient(
     to right,
@@ -416,6 +415,29 @@
 
 .button--large:hover {
   border-color: var(--color-white);
+}
+
+.button--reset {
+  display: block;
+  min-width: 120px;
+
+  margin-inline: auto;
+  margin-block: 15px;
+  padding: 5px 18px;
+  color: var(--color-greyish-brown-two); 
+  font: var(--font-button);
+  text-transform: none;
+  text-decoration: none;
+  text-align: center;
+  
+  border-radius: 40px;
+  background-image: linear-gradient(
+    to right,
+    var(--color-white) -2%,
+    #c0b7e8 98%
+  );
+
+  cursor: pointer;
 }
 
 /* ICONS */

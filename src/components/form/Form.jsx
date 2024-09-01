@@ -110,18 +110,14 @@ function Form({ allValues, handleInputValue, handleClickCreate, messageError, me
         </fieldset>
 
         <fieldset className="addForm__group--upload">
-          <UploadButton
-            text='Subir foto de proyecto'
-            updateAvatar={updateProjectImage}
-          />
-
-          <UploadButton
-            text='Subir foto de la autora'
-            updateAvatar={updateAuthorPhoto}
-          />
+          <UploadButton text='Subir foto de proyecto' updateAvatar={updateProjectImage}/>
+          <UploadButton text='Subir foto de la autora' updateAvatar={updateAuthorPhoto}/>
           <ButtonSaveProject onClick={handleClickCreate} />
-          <ClearButton handleClearForm={handleClearForm}/>
+          
         </fieldset>
+
+        <ClearButton handleClearForm={handleClearForm}/>
+        
       </form>
 
       <div>
