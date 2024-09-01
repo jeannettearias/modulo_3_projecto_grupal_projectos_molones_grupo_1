@@ -113,17 +113,19 @@ function Form({ allValues, handleInputValue, handleClickCreate, messageError, me
           <UploadButton text='Subir foto de proyecto' updateAvatar={updateProjectImage}/>
           <UploadButton text='Subir foto de la autora' updateAvatar={updateAuthorPhoto}/>
           <ButtonSaveProject onClick={handleClickCreate} />
+
+          <div>
+            {messageUrl && <p>{messageUrl}</p>}
+            {messageError && <p>{messageError}</p>}
+          </div>
           
         </fieldset>
 
         <ClearButton handleClearForm={handleClearForm}/>
-        
+
       </form>
 
-      <div>
-        {messageUrl && <p>{messageUrl}</p>}
-        {messageError && <p>{messageError}</p>}
-      </div>
+      
 
 
     </>
