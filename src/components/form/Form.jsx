@@ -2,9 +2,10 @@
 import UploadButton from "./UploadButton";
 import ButtonSaveProject from "./ButtonSaveProject";
 import PropTypes from "prop-types";
+import ClearButton from "./ClearButton";
 
 
-function Form({ allValues, handleInputValue, handleClickCreate, messageError, messageUrl }) {
+function Form({ allValues, handleInputValue, handleClickCreate, messageError, messageUrl, handleClearForm }) {
 
 
   const handleInput = (ev) => {
@@ -23,7 +24,7 @@ function Form({ allValues, handleInputValue, handleClickCreate, messageError, me
 
   return (
     <>
-      <form className="addForm" onSubmit={ev => { ev.preventDefault();}}>
+    <form className="addForm" onSubmit={ev => { ev.preventDefault();}}>
         <h2 className="title">Información</h2>
         <fieldset className="addForm__group">
           <legend className="addForm__title">Cuéntanos sobre el proyecto</legend>
@@ -119,6 +120,7 @@ function Form({ allValues, handleInputValue, handleClickCreate, messageError, me
             updateAvatar={updateAuthorPhoto}
           />
           <ButtonSaveProject onClick={handleClickCreate} />
+          <ClearButton handleClearForm={handleClearForm}/>
         </fieldset>
       </form>
 
@@ -138,7 +140,7 @@ Form.propTypes = {
   handleClickCreate: PropTypes.func.isRequired,
   messageError: PropTypes.string.isRequired,
   messageUrl: PropTypes.node.isRequired,
-
+  handleClearForm:PropTypes.func.isRequired,
 
 };
 

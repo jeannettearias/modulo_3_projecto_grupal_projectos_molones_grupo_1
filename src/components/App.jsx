@@ -9,6 +9,7 @@ import { Routes, Route } from 'react-router-dom';
 
 
 
+
 function App() {
 
   //Global variables
@@ -45,6 +46,24 @@ function App() {
 
     console.log(newValues);
   }
+
+  const handleClearForm = () => {
+    setAllValues ({
+    name: '',
+    slogan: '',
+    repo: '',
+    demo: '',
+    technologies: '',
+    desc: '',
+    autor: '',
+    job: '',
+    photo: '',
+    image: '',
+    });
+    setMessageError('');
+    setMessageUrl('');
+    localStorage.removeItem('formData')
+  };
   
   const handleClickCreate = () => {
 
@@ -88,10 +107,10 @@ function App() {
         <Route path="/newproject" element={<NewProject
 
           handleInputValue={handleInputValue}
+          handleClickCreate = {handleClickCreate}
+          handleClearForm={handleClearForm}
           messageError={messageError}
           messageUrl={messageUrl}
-          handleClickCreate = {handleClickCreate}
-
           allValues={allValues} 
           
           />} />

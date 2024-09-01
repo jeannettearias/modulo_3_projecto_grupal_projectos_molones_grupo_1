@@ -3,7 +3,7 @@ import Preview from "../preview/Preview";
 import PropTypes from 'prop-types';
 
 
-function NewProject({ allValues, handleInputValue, handleClickCreate, messageError,messageUrl }) {
+function NewProject({ allValues, handleInputValue, handleClickCreate, handleClearForm, messageError,messageUrl }) {
   return (
     <main className="main">
       <section className="hero">
@@ -27,6 +27,7 @@ function NewProject({ allValues, handleInputValue, handleClickCreate, messageErr
         handleClickCreate={handleClickCreate}
         messageUrl={messageUrl}
         messageError={messageError}
+        handleClearForm={handleClearForm}
          />
         
 
@@ -39,7 +40,8 @@ NewProject.propTypes = {
   handleInputValue: PropTypes.func.isRequired,
   handleClickCreate: PropTypes.func.isRequired,
   messageError: PropTypes.string.isRequired,
-  messageUrl: PropTypes.string.isRequired
+  messageUrl: PropTypes.string.isRequired,
+  handleClearForm: PropTypes.func.isRequired,
 
 };
 
