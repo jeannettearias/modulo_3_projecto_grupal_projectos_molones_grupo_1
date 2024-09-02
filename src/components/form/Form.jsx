@@ -112,7 +112,7 @@ function Form({ allValues, handleInputValue, handleClickCreate, messageError, me
           <ButtonSaveProject onClick={handleClickCreate} />
 
           <div>
-            {messageUrl && <>{messageUrl}</>}
+            {messageUrl && <p>Tarjeta creada. URL: <a className='link_create_card' href={messageUrl} target="_blank"> {messageUrl}</a></p>}
             {messageError && <>{messageError}</>}
           </div>
           

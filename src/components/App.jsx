@@ -73,15 +73,11 @@ function App() {
       .then(response => response.json())
       .then(data => {
         if (data.success) {
-          setMessageUrl(
-            <p> 
-              Tarjeta creada. URL:
-              <a className='link_create_card' href={data.cardURL} target="_blank"> {data.cardURL}</a>
-            </p>
-          );
+          setMessageUrl(data.cardURL);
           setMessageError('');
         } else {
-          setMessageError (data.error)
+          setMessageError (data.error);
+          setMessageUrl('');
         }
       })
       .catch(error => {
