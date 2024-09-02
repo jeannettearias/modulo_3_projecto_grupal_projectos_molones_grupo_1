@@ -112,8 +112,8 @@ function Form({ allValues, handleInputValue, handleClickCreate, messageError, me
           <ButtonSaveProject onClick={handleClickCreate} />
 
           <div>
-            {messageUrl && <p>{messageUrl}</p>}
-            {messageError && <p>{messageError}</p>}
+            {messageUrl && <>{messageUrl}</>}
+            {messageError && <>{messageError}</>}
           </div>
           
         </fieldset>

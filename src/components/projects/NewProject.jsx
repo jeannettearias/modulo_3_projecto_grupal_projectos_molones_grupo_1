@@ -36,7 +36,7 @@ NewProject.propTypes = {
   handleInputValue: PropTypes.func.isRequired,
   handleClickCreate: PropTypes.func.isRequired,
   messageError: PropTypes.string.isRequired,
-  messageUrl: PropTypes.string.isRequired,
+  messageUrl: PropTypes.node.isRequired,
   handleClearForm: PropTypes.func.isRequired,
 
 };
