@@ -460,10 +460,14 @@
 }
 
 .link_create_card {
-  text-decoration: none;
   color: white;
   margin-inline: 10px;
 }
+
+.link_create_card:hover {
+  color: rgb(178, 145, 216);
+}
+
 .main__landing{
   height: 100vh;
 }
@@ -488,4 +492,8 @@
   border-image-slice: 1;
   border-radius: 20px;
   background-color: white;
+}
+
+.message {
+  text-align: center;
 }

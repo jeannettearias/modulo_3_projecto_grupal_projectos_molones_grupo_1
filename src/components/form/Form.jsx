@@ -110,13 +110,12 @@ function Form({ allValues, handleInputValue, handleClickCreate, messageError, me
           <UploadButton text='Subir foto de proyecto' updateAvatar={updateProjectImage}/>
           <UploadButton text='Subir foto de la autora' updateAvatar={updateAuthorPhoto}/>
           <ButtonSaveProject onClick={handleClickCreate} />
-
-          <div>
-            {messageUrl && <p>Tarjeta creada. URL: <a className='link_create_card' href={messageUrl} target="_blank"> {messageUrl}</a></p>}
-            {messageError && <>{messageError}</>}
-          </div>
-          
         </fieldset>
+
+        <div className="message">
+          {messageUrl && <p>Tarjeta creada. URL: <a className='link_create_card' href={messageUrl} target="_blank"> {messageUrl}</a></p>}
+          {messageError && <>{messageError}</>}
+        </div>
 
         <ClearButton handleClearForm={handleClearForm}/>
 
